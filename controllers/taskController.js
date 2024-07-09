@@ -55,10 +55,11 @@ export const deleteTask = async (req, res) => {
 };
 
 export const getTask = async (req, res) => {
-    try {
-        const Task = await Task.find();
-        res.status(200).json(Task);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
+  try {
+      const tasks = await Task.find(); 
+      res.status(200).json(tasks);
+  } catch (error) {
+      res.status(500).json({ message: error.message });
+  }
 };
+
