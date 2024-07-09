@@ -7,10 +7,9 @@ import helmet from 'helmet';
 dotenv.config();
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 app.use('/api', tasksRouter);
-app.use(cors());
 app.use(helmet())
 connectDB();
 
